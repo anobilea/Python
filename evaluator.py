@@ -1,13 +1,12 @@
 import uuid
 import typefy
 
-class Evaluator:
-    """receives a list with expressions (list of tokens), process this list and evaluate each one"""
 
-    '''Store variables after they have been calculated'''
+class Evaluator:
+    """Store variables after they have been calculated"""
     __variables = dict()
 
-    '''ordered list with list of tuples (var, expression) before transforming into postfix'''
+    """ordered list with list of tuples (var, expression) before transforming into postfix"""
     _expressions = []
     _postfix_expression = []
 
@@ -24,9 +23,8 @@ class Evaluator:
 
         return t_list
 
+    """separate expression into var being assigned and expression"""
 
-
-    '''separate expression into var being assigned and expression'''
     def _pre_process(self, raw_expression):
         exp = []
 
@@ -39,10 +37,9 @@ class Evaluator:
 
         self._expressions.append((var, self.raw_to_typed_expression(exp)))
 
-
     def to_postfix(self):
         for e in self._expressions:
-            self._postfix_expression.append(self._shunting_yard(e[1]))
+            self._postfix_expression.append((e[0], self._shunting_yard(e[1])))
 
     def _shunting_yard(self, t_token):
         pf_list = list()
@@ -72,12 +69,50 @@ class Evaluator:
         pf_list += ope_stack
         return pf_list
 
+    def calculate(self, left, right, operator):
+        if operator == '+':
+            return left + right
+        elif operator == '-':
+            return left - right
+        elif operator == '*':
+            return left * right
+        elif operator == '/':
+            return left / right
+        elif operator == '^':
+            return left ** right
+        else:
+            raise SystemError(str.format(f"No recognized operator {operator}"))
+
+    def evaluate(self, expression):
+        stack = list()
+
+        for token in expression:
+            if token.token_type & typefy.TokenTypes.NUMERIC_OPERAND:
+                stack.append(token.value)
+            elif token.token_type == typefy.TokenTypes.VARIABLE:
+                if token.value not in self.__variables:
+                    err_msg = f"The expression cannot be evaluated, variable {token.value} was not found"
+                    raise SystemError(err_msg)
+                else:
+                    stack.append(self.__variables[token.value])
+
+            elif token.token_type == typefy.TokenTypes.OPERATOR:
+                if len(stack) < 2:
+                    raise SystemError("The expression is not well formed, check the syntax")
+
+                right = stack.pop()
+                left = stack.pop()
+                stack.append(self.calculate(left, right, token.value))
+
+        if len(stack) != 1:
+            raise SystemError("Expression could not be evaluated")
+
+        return stack.pop()
+
     def run(self):
         self.to_postfix()
 
-        for s in self._postfix_expression:
-            text = ''
-            for t in s:
-                text += str(t.value)
-            print(text)
+        for pf in self._postfix_expression:
+            self.__variables[pf[0]] = self.evaluate(pf[1])
 
+        return self.__variables

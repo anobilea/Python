@@ -3,12 +3,13 @@ from enum import IntFlag
 
 
 class TokenTypes(IntFlag):
-    OPERAND_MASK = 0b001
-    INT = 3
-    FLOAT = 5
-    OPERATOR = 4
-    VARIABLE = 7
-    NONE = 8
+    OPERAND_MASK = 0b0001
+    NUMERIC_OPERAND = 0b0010
+    VARIABLE = 0b0001
+    INT = 0b0011
+    FLOAT= 0b0111
+    OPERATOR = 0b1000
+    NONE = 0b10000
 
 
 class BaseType:
