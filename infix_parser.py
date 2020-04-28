@@ -119,9 +119,10 @@ def process_expression(strexp):
 
 tk_list = [tokenizer('A*(B+C)'), tokenizer("b = A * ( B + C * D ) + E")]
 
-
 calc = evaluator.Evaluator(tk_list)
 calc.run()
+
+
 
 
 

@@ -1,13 +1,14 @@
 import re
-from enum import Enum
+from enum import IntFlag
 
 
-class TokenTypes(Enum):
-    INT = 0
-    FLOAT = 1
-    OPERATOR = 2
-    VARIABLE = 3
-    NONE = 10
+class TokenTypes(IntFlag):
+    OPERAND_MASK = 0b001
+    INT = 3
+    FLOAT = 5
+    OPERATOR = 4
+    VARIABLE = 7
+    NONE = 8
 
 
 class BaseType:

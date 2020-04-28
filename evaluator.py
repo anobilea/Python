@@ -49,7 +49,7 @@ class Evaluator:
         ope_stack = list()
 
         for t_tk in t_token:
-            if t_tk.token_type == typefy.TokenTypes.INT or t_tk.token_type == typefy.TokenTypes.FLOAT or t_tk.token_type == typefy.TokenTypes.VARIABLE:
+            if t_tk.token_type & typefy.TokenTypes.OPERAND_MASK:
                 pf_list.append(t_tk)
             elif t_tk.token_type == typefy.TokenTypes.OPERATOR:
                 if len(ope_stack) == 0:
