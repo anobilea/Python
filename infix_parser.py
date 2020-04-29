@@ -28,11 +28,15 @@ e1 = "a = 8 / 4^2 * 3.14"
 e2 = "b = a * a / (a * 1.5)"
 e3 = "d=10"
 e4 = "e = a + b - 4 ^ 0.5 + d"
-e5 = "d * (10 / (3 + 2))"
-e6 = "f=-10"
+e5 = "d * (d / (3 + 2))"
+e6 = "f  = -10"
 
-#tk_list = [tokenizer(e1), tokenizer(e2), tokenizer(e3), tokenizer(e4), tokenizer(e5), tokenizer(e6)]
-tk_list = [tokenizer(e6)]
+#is_assignment_pattern = r"^[a-zA-Z_]+[\w]*[=]{1,1}[\-]?(([0-9]+\.[0-9]+[eE][+-]?[0-9]+)|([0-9]+\.[0-9]+)|([0-9]+[eE][0-9]+)|([0-9]+))$"
+
+
+tk_list = [tokenizer(e1), tokenizer(e2), tokenizer(e3), tokenizer(e4), tokenizer(e5), tokenizer(e6)]
+#tk_list = [tokenizer(e6)]
+
 
 calc = evaluator.Evaluator(tk_list)
 result = calc.run()

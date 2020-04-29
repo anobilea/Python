@@ -1,4 +1,5 @@
 import uuid
+import re
 import typefy
 
 
@@ -23,10 +24,26 @@ class Evaluator:
 
         return t_list
 
-    """separate expression into var being assigned and expression"""
+    @staticmethod
+    def _is_assignment(exp):
+        regex = r"^[a-zA-Z_]+[\w]*[=]{1,1}[\-]?(([0-9]+\.[0-9]+[eE][+-]?[0-9]+)|([0-9]+\.[0-9]+)|([0-9]+[eE][0-9]+)|([0-9]+))$"
+        return True if re.fullmatch(regex, exp) else False
+
+    def _add_assignment(self, exp):
+        tmp = exp.split('=')
+        var_name = tmp[0]
+        value = typefy.BaseType.str_to_number(tmp[1])
+        self.__variables[var_name] = value
+
+
 
     def _pre_process(self, raw_expression):
         exp = []
+
+        str_exp = ''.join(raw_expression)
+        if self._is_assignment(str_exp):
+            self._add_assignment(str_exp)
+            return
 
         if '=' in raw_expression and raw_expression[1] == '=':
             exp[:] = raw_expression[2:]

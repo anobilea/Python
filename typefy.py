@@ -68,6 +68,17 @@ class BaseType:
 
         return None
 
+    @staticmethod
+    def str_to_number(s):
+        result, i_value = BaseType.is_int(s)
+        if result:
+            return i_value
+
+        result, f_value = BaseType.is_float(s)
+        if result:
+            return f_value
+
+
 
 class IntType(BaseType):
 
