@@ -23,7 +23,7 @@ def tokenizer(expression):
 
     return tk_lst
 
-
+''' 
 e1 = "a = 8 / 4^2 * 3.14"
 e2 = "b = a * a / (a * 1.5)"
 e3 = "d=10"
@@ -35,15 +35,13 @@ e6 = "f  = -10"
 
 
 tk_list = [tokenizer(e1), tokenizer(e2), tokenizer(e3), tokenizer(e4), tokenizer(e5), tokenizer(e6)]
-#tk_list = [tokenizer(e6)]
-
 
 calc = evaluator.Evaluator(tk_list)
 result = calc.run()
 
 for v, r in result.items():
     print(f"{v} = {r}")
-
+'''
 
 
 
