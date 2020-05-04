@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07bc19de-7684-4adf-9935-56203b7f793b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Calculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/../parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../program.py" beforeDir="false" afterPath="$PROJECT_DIR$/../program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/../runner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../typefy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../typefy.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1bS5PYfAYWUK9pocVf2HTfyec9I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07bc19de-7684-4adf-9935-56203b7f793b" name="Default Changelist" comment="" />
+      <created>1588612630878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588612630878</updated>
+    </task>
+    <servers />
+  </component>
+</project>
