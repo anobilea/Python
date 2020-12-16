@@ -1,6 +1,6 @@
 # Python
 This project implements a basic calculator that reads an expression containint the operaneds +. -. *, / and ^.
-The expression can contain variables and they automatically created in the order they appear (examples below). 
+The expression can contain variables that are automatically created in the order they appear (examples below). 
 To calculate an expression, the program performs 4 steps: 
 
 	Using regular expressions, the expression is parsed into a list of operands and operators in its original infix form.
